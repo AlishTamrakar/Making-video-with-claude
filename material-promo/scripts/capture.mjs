@@ -81,7 +81,7 @@ const browser = await chromium.launch();
   await p.context().close();
 }
 
-// 2b) Same drawer after picking a real group (Raw Materials > Conductors > Copper Wire) @3x,
+// 2b) Same drawer after picking a real group (Raw Materials > Conductors, as the prototype's own busbar M-RQ-00967) @3x,
 //     then "Save as draft" and the queue it returns to @2x.
 {
   const p = await open(3);
@@ -91,12 +91,11 @@ const browser = await chromium.launch();
   const col = (i) => p.locator('.miller-col').nth(i);
   await col(0).getByText('Raw Materials', { exact: true }).click(); await p.waitForTimeout(300);
   await col(1).getByText('Conductors', { exact: true }).click(); await p.waitForTimeout(300);
-  await col(2).getByText('Copper Wire', { exact: true }).click(); await p.waitForTimeout(300);
   await p.getByRole('button', { name: 'Select Material Group' }).click(); await settle(p, 800);
   await p.mouse.move(5, 1075);
   await p.screenshot({ path: `${OUT}/drawer-filled@3x.png` });
   layout.drawer.groupSelect = await box(p.getByRole('button', { name: 'Select', exact: true }).first());
-  layout.drawer.groupInput = await box(p.getByText('Raw Materials › Conductors › Copper Wire').first()).catch(() => null);
+  layout.drawer.groupInput = await box(p.getByText('Raw Materials › Conductors').first()).catch(() => null);
   layout.drawer.codeInput = await box(p.getByText('Material code').locator('xpath=following::input[1]'));
   layout.drawer.saveDraft = await box(p.getByRole('button', { name: 'Save as draft' }));
   await p.context().close();
@@ -109,7 +108,6 @@ const browser = await chromium.launch();
   const col = (i) => p.locator('.miller-col').nth(i);
   await col(0).getByText('Raw Materials', { exact: true }).click(); await p.waitForTimeout(300);
   await col(1).getByText('Conductors', { exact: true }).click(); await p.waitForTimeout(300);
-  await col(2).getByText('Copper Wire', { exact: true }).click(); await p.waitForTimeout(300);
   await p.getByRole('button', { name: 'Select Material Group' }).click(); await settle(p, 600);
   await p.getByRole('button', { name: 'Save as draft' }).click(); await settle(p, 900);
   await p.mouse.move(5, 1075);

@@ -6,12 +6,12 @@
 // Changed (all states are real captures of the prototype):
 //   1. type "Copper Busbar 100×10mm" into the real Material name field (zoom 2.0 so the dimmed queue keeps room
 //      for the caption);
-//   2. click the group "Select" → dissolve to the capture after picking Raw Materials › Conductors › Copper Wire,
-//      where the prototype has generated the code MAT-RM-CU-CUW-····; the code field gets one accent ring;
+//   2. click the group "Select" → dissolve to the capture after picking Raw Materials › Conductors (the prototype's own busbar group),
+//      where the prototype has generated the code MAT-RM-CU-····; the code field gets one accent ring;
 //   3. pull back, click "Save as draft" (the prototype saves drafts without the remaining required fields);
 //   4. flash cut to the queue the prototype returns to: new row M-RQ-01046 · Draft at the top + "Draft saved" toast.
 import React from 'react';
-import { AbsoluteFill, Sequence, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
+import { AbsoluteFill, Img, Sequence, interpolate, staticFile, useCurrentFrame, Easing } from 'remotion';
 import { PageCam2D, CamKey2D } from '../fx/PageCam2D';
 import { T } from '../tokens';
 import layout from '../../public/layout.json';
@@ -140,9 +140,9 @@ const Form: React.FC = () => {
         {caretOn ? <span style={{ display: 'inline-block', width: 1.5, height: 17, marginLeft: 1, borderRadius: 1, background: T.accent }} /> : null}
       </div>
       {/* the real "group picked" state: group path, generated code, pre-filled attribute template */}
-      {swap > 0 && (
-        <div style={{ position: 'absolute', left: 1472, top: 0, width: 448, height: 1080, opacity: swap, overflow: 'hidden' }}>
-          <div style={{ position: 'absolute', left: -1472, top: 0, width: 1920, height: 1080, backgroundImage: `url(${staticFile('textures/drawer-filled@3x.png')})`, backgroundSize: '1920px 1080px' }} />
+      {/* always mounted so the <Img> has loaded (the renderer waits for it) before the dissolve */ true && (
+        <div style={{ position: 'absolute', left: 1472, top: 0, width: 448, height: 1080, opacity: swap, overflow: 'hidden', visibility: swap > 0 ? 'visible' : 'hidden' }}>
+          <Img src={staticFile('textures/drawer-filled@3x.png')} style={{ position: 'absolute', left: -1472, top: 0, width: 1920, height: 1080 }} />
         </div>
       )}
       {/* one accent ring on the generated code (the shot's single highlight) */}

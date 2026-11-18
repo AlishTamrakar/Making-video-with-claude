@@ -63,7 +63,7 @@ Each motion is the hero exactly once.
 | 1 | 0–120 | Opener | blur-slide title: "New materials, / approved *faster.*" + subtitle | "Request, review and activate every material in one place." |
 | 2 | 120–285 | Requests queue | crane 3.4× on M-RQ-00124 → full queue window on stage; rows wash in as they enter | "Every material request in one queue" |
 | 3 | 285–340 | Title card | "New material? Start with *one form.*" | — |
-| 4 | 340–606 | Create request | zoom 2.0 on Material name, type "Copper Busbar 100×10mm" (3f/char) → click group Select → dissolve to the real group-picked state (Raw Materials › Conductors › Copper Wire, code MAT-RM-CU-CUW-····, ring on the code) → pull back, click Save as draft → flash cut to the queue with new row M-RQ-01046 · Draft | "Codes come from the group" · "Saved as a draft, straight into the queue" |
+| 4 | 340–606 | Create request | zoom 2.0 on Material name, type "Copper Busbar 100×10mm" (3f/char) → click group Select → dissolve to the real group-picked state (Raw Materials › Conductors and its generated code, ring on the code) → pull back, click Save as draft → flash cut to the queue with new row M-RQ-01046 · Draft | "Codes come from the group" · "Saved as a draft, straight into the queue" |
 | 5 | 606–661 | Title card | "Every department, one *material record.*" | — |
 | 6 | 661–791 | Department tasks | six rows drop & embed (cues 12/22/31/39/46/52), camera pans right + pushes in | "Overdue tasks surface before they block production" |
 | 7 | 791–981 | Outro | request icon wobbles, flips thin, cube logo blooms, wordmark lands, ~2 s hold | "Material Management · PE Transformer ERP" |
@@ -80,7 +80,7 @@ Deliberate deviations (aesthetic-rules says to record them):
 - **row-embed overflow mask:** at 1920 px the prototype's task table spills a truncated "Owner c…" column past its card;
   that thin strip is masked white so it doesn't read as a broken layout.
 - **Group picker skipped:** the create shot dissolves from the click on "Select" to the real state after a group
-  was chosen in the prototype's three-column picker (Raw Materials › Conductors › Copper Wire); the picker itself isn't shown.
+  was chosen in the prototype's three-column picker (Raw Materials › Conductors — the group of the prototype's own busbar); the picker itself isn't shown.
 - **No sound effects (S1/S4 not met):** Freesound answered HTTP 403 to every request from the cloud session, so
   the cut has music only. Cue list for adding them later is in README.md.
 - **No beat-sync:** the music was chosen by the agent, not the user, and librosa isn't available here; cuts aren't pinned to beats.

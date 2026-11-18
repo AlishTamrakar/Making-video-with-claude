@@ -20,6 +20,7 @@ const CARD_R = card.x + card.w - 1;
 const rows = layout.detail.rows.map((r) => ({ ...r, w: Math.min(r.w, CARD_R - r.x) }));
 // The prototype's task table is wider than its card at 1920px: a truncated "Owner c…" action column spills over
 // the card edge. Mask that strip (inside and just outside the card border) so it doesn't read as a broken layout.
+const FLY_R = 1538; // falling rows are cropped here so they don't carry the overflow fragment
 const OVERFLOW = { x0: 1538, x1: 1589, y0: rows[0].y - 46, y1: rows[rows.length - 1].y + rows[rows.length - 1].h };
 const PAGE_BG = '#FFFFFF';
 const src = staticFile('textures/detail@2x.png');
@@ -59,7 +60,7 @@ export const DeptTasks: React.FC = () => {
             flyer = (
               <div
                 style={{
-                  position: 'absolute', left: r.x, top: r.y, width: r.w, height: r.h, opacity: appear, zIndex: 3,
+                  position: 'absolute', left: r.x, top: r.y, width: FLY_R - r.x, height: r.h, opacity: appear, zIndex: 3,
                   transform: `perspective(900px) translateY(${(-120 * air).toFixed(2)}px) rotateX(${(16 * air).toFixed(3)}deg) scale(${scale.toFixed(4)})`,
                   filter: mb > 0.25 ? `url(#dept-mb-${i})` : undefined,
                 }}
