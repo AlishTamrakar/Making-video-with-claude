@@ -1,0 +1,201 @@
+{
+  "list": {
+    "pageH": 1080,
+    "rows": [
+      {
+        "x": 89,
+        "y": 282,
+        "w": 1814,
+        "h": 38,
+        "text": "M-RQ-00198\t"
+      },
+      {
+        "x": 89,
+        "y": 320,
+        "w": 1814,
+        "h": 42,
+        "text": "M-RQ-01002\t"
+      },
+      {
+        "x": 89,
+        "y": 362,
+        "w": 1814,
+        "h": 38,
+        "text": "M-RQ-01045\t"
+      },
+      {
+        "x": 89,
+        "y": 400,
+        "w": 1814,
+        "h": 42,
+        "text": "M-RQ-00543\t"
+      },
+      {
+        "x": 89,
+        "y": 442,
+        "w": 1814,
+        "h": 42,
+        "text": "M-RQ-00124\t"
+      },
+      {
+        "x": 89,
+        "y": 484,
+        "w": 1814,
+        "h": 38,
+        "text": "M-RQ-00881\t"
+      },
+      {
+        "x": 89,
+        "y": 522,
+        "w": 1814,
+        "h": 42,
+        "text": "M-RQ-00231\t"
+      },
+      {
+        "x": 89,
+        "y": 564,
+        "w": 1814,
+        "h": 42,
+        "text": "M-RQ-00987\t"
+      },
+      {
+        "x": 89,
+        "y": 606,
+        "w": 1814,
+        "h": 38,
+        "text": "M-RQ-00967\t"
+      },
+      {
+        "x": 89,
+        "y": 644,
+        "w": 1814,
+        "h": 38,
+        "text": "M-RQ-00789\t"
+      }
+    ],
+    "table": {
+      "x": 89,
+      "y": 246,
+      "w": 1814,
+      "h": 436
+    },
+    "title": {
+      "x": 72,
+      "y": 60,
+      "w": 1848,
+      "h": 56
+    },
+    "createBtn": {
+      "x": 1623,
+      "y": 189,
+      "w": 132,
+      "h": 40
+    }
+  },
+  "tokens": {
+    "font": "Inter, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+    "bodyBg": "rgb(255, 255, 255)",
+    "primary": "rgb(12, 131, 223)",
+    "primaryRadius": "6px",
+    "ink": "rgb(2, 6, 23)",
+    "h1Size": "30px",
+    "h1Weight": "700",
+    "text": "rgb(2, 6, 23)",
+    "border": "rgb(226, 232, 240)"
+  },
+  "logoSvg": "<svg class=\"rail-logo\" viewBox=\"0 0 40 40\"><path d=\"M20 3 35 11.5 20 20 5 11.5Z\" fill=\"#1E293B\"></path><path d=\"M5 11.5 20 20v17L5 28.5Z\" fill=\"#0C83DF\"></path><path d=\"M35 11.5 20 20v17l15-8.5Z\" fill=\"#64748B\"></path><path d=\"M20 12.5 27 16.5 20 20.5 13 16.5Z\" fill=\"#38BDF8\"></path></svg>",
+  "reqIconSvg": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z\"></path><path d=\"M14 2v4a2 2 0 0 0 2 2h4\"></path><path d=\"M9 15h6\"></path><path d=\"M12 18v-6\"></path></svg>",
+  "drawer": {
+    "nameInput": {
+      "x": 1497,
+      "y": 140,
+      "w": 399,
+      "h": 40
+    },
+    "submit": {
+      "x": 1821,
+      "y": 1028,
+      "w": 75,
+      "h": 36
+    },
+    "panel": {
+      "x": 1472,
+      "y": 0,
+      "w": 448,
+      "h": 1080
+    },
+    "title": {
+      "x": 1497,
+      "y": 24,
+      "w": 399,
+      "h": 28
+    },
+    "placeholderColor": "rgb(100, 116, 139)",
+    "inputColor": "rgb(2, 6, 23)",
+    "inputFont": {
+      "size": "14px",
+      "family": "Inter, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "padL": "12px",
+      "bg": "rgb(255, 255, 255)"
+    }
+  },
+  "detail": {
+    "pageH": 1080,
+    "rows": [
+      {
+        "x": 922,
+        "y": 199,
+        "w": 700,
+        "h": 51,
+        "text": "General Information"
+      },
+      {
+        "x": 922,
+        "y": 250,
+        "w": 700,
+        "h": 51,
+        "text": "Planning"
+      },
+      {
+        "x": 922,
+        "y": 301,
+        "w": 700,
+        "h": 51,
+        "text": "Purchasing"
+      },
+      {
+        "x": 922,
+        "y": 352,
+        "w": 700,
+        "h": 51,
+        "text": "Warehouse"
+      },
+      {
+        "x": 922,
+        "y": 403,
+        "w": 700,
+        "h": 51,
+        "text": "Quality"
+      },
+      {
+        "x": 922,
+        "y": 454,
+        "w": 700,
+        "h": 51,
+        "text": "Accounting & Costing"
+      }
+    ],
+    "card": {
+      "x": 905,
+      "y": 80,
+      "w": 661,
+      "h": 558
+    },
+    "activity": {
+      "x": 1607,
+      "y": 60,
+      "w": 111,
+      "h": 42
+    }
+  }
+}
