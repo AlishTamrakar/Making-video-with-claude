@@ -81,6 +81,43 @@ const browser = await chromium.launch();
   await p.context().close();
 }
 
+// 2b) Same drawer after picking a real group (Raw Materials > Conductors > Copper Wire) @3x,
+//     then "Save as draft" and the queue it returns to @2x.
+{
+  const p = await open(3);
+  await p.getByRole('button', { name: /Create new/ }).click(); await settle(p, 600);
+  await p.getByPlaceholder(/CRGO Silicon Steel/).first().fill('Copper Busbar 100×10mm');
+  await p.getByRole('button', { name: 'Select', exact: true }).first().click(); await settle(p, 500);
+  const col = (i) => p.locator('.miller-col').nth(i);
+  await col(0).getByText('Raw Materials', { exact: true }).click(); await p.waitForTimeout(300);
+  await col(1).getByText('Conductors', { exact: true }).click(); await p.waitForTimeout(300);
+  await col(2).getByText('Copper Wire', { exact: true }).click(); await p.waitForTimeout(300);
+  await p.getByRole('button', { name: 'Select Material Group' }).click(); await settle(p, 800);
+  await p.mouse.move(5, 1075);
+  await p.screenshot({ path: `${OUT}/drawer-filled@3x.png` });
+  layout.drawer.groupSelect = await box(p.getByRole('button', { name: 'Select', exact: true }).first());
+  layout.drawer.groupInput = await box(p.getByText('Raw Materials › Conductors › Copper Wire').first()).catch(() => null);
+  layout.drawer.codeInput = await box(p.getByText('Material code').locator('xpath=following::input[1]'));
+  layout.drawer.saveDraft = await box(p.getByRole('button', { name: 'Save as draft' }));
+  await p.context().close();
+}
+{
+  const p = await open(2);
+  await p.getByRole('button', { name: /Create new/ }).click(); await settle(p, 600);
+  await p.getByPlaceholder(/CRGO Silicon Steel/).first().fill('Copper Busbar 100×10mm');
+  await p.getByRole('button', { name: 'Select', exact: true }).first().click(); await settle(p, 500);
+  const col = (i) => p.locator('.miller-col').nth(i);
+  await col(0).getByText('Raw Materials', { exact: true }).click(); await p.waitForTimeout(300);
+  await col(1).getByText('Conductors', { exact: true }).click(); await p.waitForTimeout(300);
+  await col(2).getByText('Copper Wire', { exact: true }).click(); await p.waitForTimeout(300);
+  await p.getByRole('button', { name: 'Select Material Group' }).click(); await settle(p, 600);
+  await p.getByRole('button', { name: 'Save as draft' }).click(); await settle(p, 900);
+  await p.mouse.move(5, 1075);
+  await p.screenshot({ path: `${OUT}/saved@2x.png` });
+  layout.saved = { newRow: await box(p.locator('tbody tr').first()), toast: await box(p.getByText('Draft saved').locator('xpath=ancestor::*[contains(@class,"toast") or @role="status"][1]')).catch(() => null) };
+  await p.context().close();
+}
+
 // 3) Request detail @2x (department tasks)
 {
   const p = await open(2);

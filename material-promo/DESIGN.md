@@ -56,17 +56,17 @@ fades/pans; physical landings (row embed, logo bloom) keep the card-specified pr
 
 Each motion is the hero exactly once.
 
-## Stage 3 — Storyboard (30 fps)
+## Stage 3 — Storyboard (30 fps, 981 frames ≈ 32.7 s)
 
 | # | Frames | Shot | Key motion | Caption / copy |
 |---|---|---|---|---|
 | 1 | 0–120 | Opener | blur-slide title: "New materials, / approved *faster.*" + subtitle | "Request, review and activate every material in one place." |
-| 2 | 120–285 | Requests queue | crane 3.4× on M-RQ-00124 → full queue window on stage; rows wash in as they enter | "Priority, status and data completion at a glance" |
-| 3 | 285–340 | Title card | "New material? Request it in *seconds.*" | — |
-| 4 | 340–480 | Create request | zoom 2.4 on Material name, type "Copper Busbar 100×10mm" (3f/char), pull back, pointer → Submit, double ripple, push in | "Material codes are generated from the group" |
-| 5 | 480–535 | Title card | "Every department, one *material record.*" | — |
-| 6 | 535–655 | Department tasks | six rows drop & embed (cues 12/22/31/39/46/52), camera eases down + pushes in | "Overdue tasks surface before they block production" |
-| 7 | 655–815 | Outro | request icon wobbles, flips thin, cube logo blooms, wordmark lands, ≥1 s hold | "Material Management · PE Transformer ERP" |
+| 2 | 120–285 | Requests queue | crane 3.4× on M-RQ-00124 → full queue window on stage; rows wash in as they enter | "Every material request in one queue" |
+| 3 | 285–340 | Title card | "New material? Start with *one form.*" | — |
+| 4 | 340–606 | Create request | zoom 2.0 on Material name, type "Copper Busbar 100×10mm" (3f/char) → click group Select → dissolve to the real group-picked state (Raw Materials › Conductors › Copper Wire, code MAT-RM-CU-CUW-····, ring on the code) → pull back, click Save as draft → flash cut to the queue with new row M-RQ-01046 · Draft | "Codes come from the group" · "Saved as a draft, straight into the queue" |
+| 5 | 606–661 | Title card | "Every department, one *material record.*" | — |
+| 6 | 661–791 | Department tasks | six rows drop & embed (cues 12/22/31/39/46/52), camera pans right + pushes in | "Overdue tasks surface before they block production" |
+| 7 | 791–981 | Outro | request icon wobbles, flips thin, cube logo blooms, wordmark lands, ~2 s hold | "Material Management · PE Transformer ERP" |
 
 Energy: low open → mid-high crane → breath → mid interaction → breath → mid embed → mid-high outro.
 
@@ -76,3 +76,11 @@ Deliberate deviations (aesthetic-rules says to record them):
 - **crane-rise-reveal aftermath:** no status flip on the tracked row (it would show data the product doesn't have);
   the hold is kept alive by the caption instead.
 - **paper-title-card:** the accent word is coloured but not italic (Inter italic isn't embedded; a synthetic italic looks worse).
+- **crane-rise-reveal KPI counter:** dropped — the requests page has no headline number to count up.
+- **row-embed overflow mask:** at 1920 px the prototype's task table spills a truncated "Owner c…" column past its card;
+  that thin strip is masked white so it doesn't read as a broken layout.
+- **Group picker skipped:** the create shot dissolves from the click on "Select" to the real state after a group
+  was chosen in the prototype's three-column picker (Raw Materials › Conductors › Copper Wire); the picker itself isn't shown.
+- **No sound effects (S1/S4 not met):** Freesound answered HTTP 403 to every request from the cloud session, so
+  the cut has music only. Cue list for adding them later is in README.md.
+- **No beat-sync:** the music was chosen by the agent, not the user, and librosa isn't available here; cuts aren't pinned to beats.

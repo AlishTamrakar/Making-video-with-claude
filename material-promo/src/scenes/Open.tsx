@@ -80,17 +80,17 @@ export const Open: React.FC = () => {
 
       {/* masthead */}
       <div style={{ position: 'absolute', left: LEFT, right: LEFT, top: 86, display: 'flex', justifyContent: 'space-between', alignItems: 'center', opacity: 0.4 + 0.6 * rule }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 16, fontFamily: T.font, fontSize: 30, fontWeight: 700, letterSpacing: '-0.01em', color: T.ink }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16, fontFamily: T.font, fontSize: 34, fontWeight: 700, letterSpacing: '-0.01em', color: T.ink }}>
           <CubeLogo size={46} />
           Material Management
         </div>
-        <span style={{ fontFamily: T.font, fontSize: 24, fontWeight: 600, letterSpacing: '0.16em', color: T.muted }}>PE TRANSFORMER ERP</span>
+        <span style={{ fontFamily: T.font, fontSize: 32, fontWeight: 600, letterSpacing: '0.14em', color: T.muted }}>PE TRANSFORMER ERP</span>
       </div>
       <div style={{ position: 'absolute', left: LEFT, top: 152, width: 1920 - LEFT * 2, height: 1.5, background: 'rgba(2,6,23,0.14)', transform: `scaleX(${rule.toFixed(4)})`, transformOrigin: '0 50%' }} />
 
       {/* footer rule + label (hold-phase closer) */}
       <div style={{ position: 'absolute', left: LEFT, top: 972, width: 1920 - LEFT * 2, height: 1.5, background: 'rgba(2,6,23,0.12)', transform: `scaleX(${foot.toFixed(4)})`, transformOrigin: '100% 50%' }} />
-      <div style={{ position: 'absolute', right: LEFT, top: 994, fontFamily: T.font, fontSize: 24, fontWeight: 600, letterSpacing: '0.16em', color: T.muted, opacity: foot }}>
+      <div style={{ position: 'absolute', right: LEFT, top: 990, fontFamily: T.font, fontSize: 32, fontWeight: 600, letterSpacing: '0.14em', color: T.muted, opacity: foot }}>
         MATERIAL CREATION REQUESTS
       </div>
 
@@ -98,7 +98,7 @@ export const Open: React.FC = () => {
         <div
           style={{
             position: 'absolute', left: LEFT, top: 300, display: 'flex', alignItems: 'center', gap: 18,
-            fontFamily: T.font, fontSize: 30, fontWeight: 700, letterSpacing: '0.14em', color: T.accent,
+            fontFamily: T.font, fontSize: 34, fontWeight: 700, letterSpacing: '0.12em', color: T.accent,
             opacity: kick, transform: `translateY(${((1 - kick) * 18).toFixed(2)}px)`, filter: kick >= 0.999 ? undefined : `blur(${((1 - kick) * 6).toFixed(2)}px)`,
           }}
         >

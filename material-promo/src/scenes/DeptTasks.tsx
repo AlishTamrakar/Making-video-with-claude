@@ -13,17 +13,20 @@ import { PageCam2D, CamKey2D } from '../fx/PageCam2D';
 import { T } from '../tokens';
 import layout from '../../public/layout.json';
 
-export const DEPT_DURATION = 120;
+export const DEPT_DURATION = 130;
 
 const card = layout.detail.card;
 const CARD_R = card.x + card.w - 1;
 const rows = layout.detail.rows.map((r) => ({ ...r, w: Math.min(r.w, CARD_R - r.x) }));
+// The prototype's task table is wider than its card at 1920px: a truncated "Owner c…" action column spills over
+// the card edge. Mask that strip (inside and just outside the card border) so it doesn't read as a broken layout.
+const OVERFLOW = { x0: 1538, x1: 1589, y0: rows[0].y - 46, y1: rows[rows.length - 1].y + rows[rows.length - 1].h };
 const PAGE_BG = '#FFFFFF';
 const src = staticFile('textures/detail@2x.png');
 
 const CAM: CamKey2D[] = [
-  { frame: 0, cx: 1325, cy: 360, zoom: 1.62 }, // card + activity rail, a sliver of the dimmed queue on the left
-  { frame: 72, cx: 1372, cy: 400, zoom: 1.75 }, // pan right/down + push; right edge pinned to the page edge
+  { frame: 0, cx: 1325, cy: 395, zoom: 1.62 }, // card + activity rail; sheet title kept out of frame (no half-cut line)
+  { frame: 72, cx: 1372, cy: 400, zoom: 1.75 }, // pan right + push; right edge pinned to the page edge
 ];
 const CUES = [12, 22, 31, 39, 46, 52];
 const FLY = 12;
@@ -36,6 +39,8 @@ export const DeptTasks: React.FC = () => {
   return (
     <AbsoluteFill>
       <PageCam2D src="textures/detail@2x.png" pageH={1080} keys={CAM} bg={PAGE_BG}>
+        <div style={{ position: 'absolute', left: OVERFLOW.x0, top: OVERFLOW.y0, width: CARD_R - OVERFLOW.x0 - 0.5, height: OVERFLOW.y1 - OVERFLOW.y0, background: '#fff' }} />
+        <div style={{ position: 'absolute', left: CARD_R + 1.5, top: OVERFLOW.y0, width: OVERFLOW.x1 - CARD_R - 1.5, height: OVERFLOW.y1 - OVERFLOW.y0, background: '#fff' }} />
         {rows.map((r, i) => {
           const cue = CUES[i];
           const land = cue + FLY;

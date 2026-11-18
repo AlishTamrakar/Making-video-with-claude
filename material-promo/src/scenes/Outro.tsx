@@ -11,7 +11,7 @@ import { EASE, ramp } from '../fx/Polish';
 import { T } from '../tokens';
 import { CubeLogo, RequestIcon } from '../Logo';
 
-export const OUTRO_DURATION = 160;
+export const OUTRO_DURATION = 190; // lockup complete ~f125, then a ≥2 s hold (R1)
 
 const MARK = 300;
 const WORD = 'Material Management';
@@ -38,8 +38,8 @@ export const Outro: React.FC = () => {
   const showIcon = frame < FLIP_MID;
   const ghosts = frame >= FLIP_START && frame < FLIP_MID ? [0.12, 0.24] : [];
   const wordEnd = WORD_START + (WORD.length - 1) * 2.6 + 12;
-  const kick = ramp(frame, wordEnd - 6, 18, EASE.out);
-  const push = 1 + 0.02 * ramp(frame, wordEnd, 160 - wordEnd, EASE.smooth);
+  const kick = ramp(frame, wordEnd - 10, 16, EASE.out);
+  const push = 1 + 0.02 * ramp(frame, wordEnd, OUTRO_DURATION - wordEnd, EASE.smooth);
 
   return (
     <AbsoluteFill style={{ background: `linear-gradient(180deg, #FFFFFF 0%, ${T.surface} 60%, #EEF2F7 100%)`, alignItems: 'center', justifyContent: 'center' }}>
@@ -103,7 +103,7 @@ export const Outro: React.FC = () => {
         </div>
         <div
           style={{
-            position: 'absolute', left: 960 + markX + WORD_GAP + 4, top: 540 + 44, display: 'flex', alignItems: 'center', gap: 16,
+            position: 'absolute', left: 960 + markX + WORD_GAP + 4, top: 540 + 58, display: 'flex', alignItems: 'center', gap: 16,
             fontFamily: T.font, fontSize: 34, fontWeight: 600, letterSpacing: '0.14em', color: T.muted,
             opacity: kick, transform: `translateY(${((1 - kick) * 14).toFixed(2)}px)`, filter: kick < 0.999 ? `blur(${((1 - kick) * 6).toFixed(2)}px)` : undefined,
           }}

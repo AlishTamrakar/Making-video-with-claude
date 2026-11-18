@@ -137,6 +137,39 @@
       "family": "Inter, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
       "padL": "12px",
       "bg": "rgb(255, 255, 255)"
+    },
+    "groupSelect": {
+      "x": 1820,
+      "y": 220,
+      "w": 76,
+      "h": 40
+    },
+    "groupInput": null,
+    "codeInput": {
+      "x": 1497,
+      "y": 300,
+      "w": 399,
+      "h": 40
+    },
+    "saveDraft": {
+      "x": 1698,
+      "y": 1028,
+      "w": 115,
+      "h": 36
+    }
+  },
+  "saved": {
+    "newRow": {
+      "x": 89,
+      "y": 282,
+      "w": 1814,
+      "h": 38
+    },
+    "toast": {
+      "x": 92,
+      "y": 950,
+      "w": 420,
+      "h": 110
     }
   },
   "detail": {
